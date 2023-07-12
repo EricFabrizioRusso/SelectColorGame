@@ -1,0 +1,15 @@
+
+
+.selectColor{
+
+    width: 150px;
+    height: 150px;
+    margin: 1em;
+}
+
+.selectColor:hover{
+
+    transform: scale(1.5);
+    cursor: pointer;
+
+}

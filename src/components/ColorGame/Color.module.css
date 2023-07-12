@@ -1,0 +1,27 @@
+
+
+
+.colorGame{
+    position: relative;
+    background: #292929;
+    width: 800px;
+    height: 700px;
+    
+
+
+}
+.colorGame__colorsContainer{
+
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
+
+
+
+
+
+
