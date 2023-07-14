@@ -20,6 +20,90 @@
 
 }
 
+.timer{
+
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+    
+   
+   
+}
+
+.timerActive{
+
+    
+    animation: animate  1s infinite linear;
+
+
+}
+
+@keyframes animate{
+
+    0%{
+        color: #f00;
+        transform: scale(1);
+        text-shadow: 0 0 10px #f00;
+
+    }
+
+    50%{
+        color: #f00;
+        transform: scale(1.1);
+        text-shadow: 0 0 10px #f00,
+        0 0 10px #f00;
+
+
+    }
+
+    100%{
+
+        color: #f00;
+        transform: scale(1);
+        text-shadow: 0 0 10px #f00;
+
+    }
+}
+
+.timer__miliseconds{
+    
+    margin: 2px;
+    font-size: 1.1em;
+    height: 20px;
+}
+
+.score{
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+
+}
+
+.timer__moreTime{
+    color: rgb(20, 180, 20);
+    animation: animateScore .5s infinite;
+
+}
+
+@keyframes animateScore{
+
+    to{
+
+        transform: translateY(-30px);
+        opacity: 0;
+
+    }
+
+}
+
+
+
 
 
 
