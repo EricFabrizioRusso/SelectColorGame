@@ -3,8 +3,10 @@ import GameStyle from './Color.module.css';
 import SelectColor from './selectColor/SelectColor';
 const ColorGame = () => {
 
-  const initialTime= 10000
-  const BonusTime= '+2s';
+  let initialTime= 10000
+  let bonus= 2000;
+  let bonus2= 1000;
+  let bonusTime= '+2s';
   const [correctColor, setCorrectColor] = useState('');
   const [score, setScore] = useState(0);
   const [counter, setCounter] = useState(initialTime);
@@ -20,14 +22,6 @@ const ColorGame = () => {
     const index= Math.floor(Math.random() * colorWord.length);
     setCorrectColor(colorWord[index]);
   }
-  
-  if(score === 5){
-
-    
-
-
-  }
-
 
   const handleScore=(selectedColor)=>{
 
@@ -35,12 +29,21 @@ const ColorGame = () => {
 
       setScore(score + 1);
       handleColor();
-      setCounter( counter + 1000);
+
+      if(score >= 10){
+        bonusTime='+1s';
+        setCounter( counter + bonus2);
+
+      }else{
+
+        setCounter( counter + bonus);
+
+      }
       setRandomColor(Math.floor(Math.random() * colorWord.length));
 
 
       const moreScore= document.querySelector(`.${GameStyle.timer__moreTime}`)
-      moreScore.innerHTML= `<h3>${BonusTime}</h3>`
+      moreScore.innerHTML= `<h3>${bonusTime}</h3>`
 
       setTimeout(() => {
 
@@ -59,7 +62,6 @@ const ColorGame = () => {
     }
 
   }
-
   const handleStatus=()=>{
 
     
@@ -106,6 +108,9 @@ const ColorGame = () => {
       setCounter(initialTime)
 
     }
+
+  
+  
 
     return () => {
 
