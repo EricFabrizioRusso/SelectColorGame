@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&display=swap');
+
 *{
 
     margin: 0;
@@ -7,12 +9,68 @@
 
 body{
 
-    background: #191919;
+    color: #fff;
     font-size: 18px;
+    min-height: 100vh;
+    font-family: Lexend ;
+    background: linear-gradient(45deg, rgb(216, 44, 44),rgb(69, 69, 226));
+    animation: color 3s ease-in-out linear infinite;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+
 
 }
+
+
+.main{
+
+  text-align: center;
+  margin: auto;
+
+
+}
+
+.title{
+
+  margin: 1em 0;
+
+}
+
+.btnStart{
+
+  margin: 2em;
+  padding: 1em;
+  background: none;
+  border: none;
+  background: #292929;
+  color: #fff;
+  border-radius: .5em;
+  width: 200px;
+
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+
+}
+
+.btnStart:hover{
+
+  background: #111;
+
+
+}
+
+
+@media screen and (max-width:700px){
+
+
+
+  
+
+
+
+
+}
+
 

@@ -15,8 +15,6 @@ const ColorGame = () => {
   const seconds= Math.floor(counter / 1000);
   const miliSeconds= counter % 1000;
 
-  const [incrementScore, setIncrementScore] = useState();
-
   const handleColor=()=>{
 
     const index= Math.floor(Math.random() * colorWord.length);
@@ -53,11 +51,14 @@ const ColorGame = () => {
 
     }else{
 
-      alert("Has perdido!")
+      alert(`You lost\n Score: ${score}`)
       setScore(0);
       handleColor();
       setCounter(initialTime);
       setRandomColor(Math.floor(Math.random() * colorWord.length));
+
+      const moreScore= document.querySelector(`.${GameStyle.timer__moreTime}`)
+      moreScore.innerHTML= ''
   
     }
 
@@ -65,7 +66,7 @@ const ColorGame = () => {
   const handleStatus=()=>{
 
     
-    alert("Has perdido!")
+    alert(`You lost\nScore: ${score}`)
     setScore(0)
     handleColor();
    
@@ -128,8 +129,9 @@ const ColorGame = () => {
 
   return (
     <div className={GameStyle.colorGame}>
-        <h2>Select the word color</h2>
-        <h2 style={{color: colorWord[randomColor]}}>{correctColor}</h2>
+        <h2 className={GameStyle.colorGame__subtitle}>Select the word color</h2>
+        <h2 className={GameStyle.colorGame__target} style={{color: colorWord[randomColor]}}>{correctColor}</h2>
+        <div className={GameStyle.stats}>
            <div className={GameStyle.timer}>
               <div className={GameStyle.timer__moreTime}></div>
               <h2 className={GameStyle.timer__seconds}>{seconds}s</h2>
@@ -138,6 +140,7 @@ const ColorGame = () => {
            <div className={GameStyle.score}>
               <h3 className={GameStyle.score__currentScore}>Score: {score}</h3>
            </div>
+        </div>
         <div className={GameStyle.colorGame__colorsContainer}>
           {colorWord.map((color, index)=>(
 

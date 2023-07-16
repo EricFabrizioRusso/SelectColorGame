@@ -5,11 +5,44 @@
     width: 150px;
     height: 150px;
     margin: 1em;
+    border-radius: 1em;
+    box-shadow: 0 0 15px rgb(0, 0, 0,.5),
+    0 0 20px rgb(0, 0, 0,.5);
+    filter: brightness(.8);
+
+    transition: all .3s ease-in-out;
 }
 
 .selectColor:hover{
 
-    transform: scale(1.5);
+    transform: scale(1.1);
+    filter: brightness(1.5);
     cursor: pointer;
 
 }
+
+.selectColor:active{
+
+    transform: scale(.9);
+    
+
+
+}
+
+
+
+
+@media screen and (max-width:700px){
+
+    .selectColor{
+
+        width: 65px;
+        height: 65px;
+
+
+    }
+
+
+}
+
+

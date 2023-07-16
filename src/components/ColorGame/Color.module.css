@@ -3,35 +3,68 @@
 
 .colorGame{
     position: relative;
-    background: #292929;
-    width: 800px;
-    height: 700px;
-    
+    border-radius: .5em;
+    height: 900px;
+    width: 900px;
+    text-align: center;
 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+ 
 
 }
+
+.colorGame__subtitle{
+
+    margin: 5% 0;
+}
+
+.colorGame__target{
+
+    margin: 2% 0;
+
+}
+
 .colorGame__colorsContainer{
 
     position: absolute;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
 
 
 }
 
-.timer{
+.colorGame__target{
 
+    text-shadow: 0 0 15px;
+
+}
+
+.stats{
+ 
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.timer{
+    
     
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
+   
+}
 
-    
-   
-   
+.timer > div{
+
+    margin: 0 2em;
+
 }
 
 .timerActive{
@@ -71,9 +104,9 @@
 
 .timer__miliseconds{
     
-    margin: 2px;
-    font-size: 1.1em;
-    height: 20px;
+
+    font-size: .5em;
+    align-self: flex-end;
 }
 
 .score{
@@ -88,6 +121,7 @@
 .timer__moreTime{
     color: rgb(20, 180, 20);
     animation: animateScore .5s infinite;
+    position: absolute;
 
 }
 
@@ -101,9 +135,32 @@
     }
 
 }
+.colorGame__colorsContainer{
+
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+
+
+}
+
+
+@media screen and (max-width:700px){
+
+
+    .colorGame{
+        height: 600px;
+        width: 360px;
+        font-size: .7em;
+     
+    
+    }
 
 
 
+
+
+}
 
 
 
