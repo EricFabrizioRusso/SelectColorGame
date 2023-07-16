@@ -51,7 +51,7 @@ const ColorGame = () => {
 
     }else{
 
-      alert(`You lost\n Score: ${score}`)
+      alert(`Game Over !\n Score: ${score}`)
       setScore(0);
       handleColor();
       setCounter(initialTime);
@@ -66,7 +66,7 @@ const ColorGame = () => {
   const handleStatus=()=>{
 
     
-    alert(`You lost\nScore: ${score}`)
+    alert(`Game Over !\nScore: ${score}`)
     setScore(0)
     handleColor();
    

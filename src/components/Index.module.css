@@ -13,12 +13,14 @@ body{
     font-size: 18px;
     min-height: 100vh;
     font-family: Lexend ;
-    background: linear-gradient(45deg, rgb(216, 44, 44),rgb(69, 69, 226));
-    animation: color 3s ease-in-out linear infinite;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: #202020;
+    background-image: radial-gradient(#333333 5px, transparent 5px);
+    background-size: 50px 50px;
+
 
 
 }
@@ -48,6 +50,8 @@ body{
   color: #fff;
   border-radius: .5em;
   width: 200px;
+  line-height: 1em;
+  font-size: 1em;
 
   transition: all .3s ease-in-out;
   cursor: pointer;
@@ -57,18 +61,6 @@ body{
 .btnStart:hover{
 
   background: #111;
-
-
-}
-
-
-@media screen and (max-width:700px){
-
-
-
-  
-
-
 
 
 }
