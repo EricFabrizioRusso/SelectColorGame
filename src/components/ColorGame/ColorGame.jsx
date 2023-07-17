@@ -14,6 +14,8 @@ const ColorGame = () => {
   const [randomColor, setRandomColor] = useState(Math.floor(Math.random() * colorWord.length));
   const seconds= Math.floor(counter / 1000);
   const miliSeconds= counter % 1000;
+  const [timerMinutes, setTimerMinutes] = useState(0);
+  const [timerSeconds, setTimerSeconds] = useState(0);
 
   const handleColor=()=>{
 
@@ -51,11 +53,15 @@ const ColorGame = () => {
 
     }else{
 
-      alert(`Game Over !\n Score: ${score}`)
+      //alert(`Game Over !\n Score: ${score}`)
+      alert(`Game Over !\nScore: ${score}\nTime: ${timerMinutes}:${timerSeconds < 10 ? `0${timerSeconds}`:timerSeconds}`);
       setScore(0);
       handleColor();
       setCounter(initialTime);
       setRandomColor(Math.floor(Math.random() * colorWord.length));
+      setTimerMinutes(0);
+      setTimerSeconds(0);
+
 
       const moreScore= document.querySelector(`.${GameStyle.timer__moreTime}`)
       moreScore.innerHTML= ''
@@ -66,7 +72,7 @@ const ColorGame = () => {
   const handleStatus=()=>{
 
     
-    alert(`Game Over !\nScore: ${score}`)
+    alert(`Game Over !\nScore: ${score}\nTime: ${timerMinutes}:${timerSeconds < 10 ? `0${timerSeconds}`:timerSeconds}`);
     setScore(0)
     handleColor();
    
@@ -106,20 +112,49 @@ const ColorGame = () => {
     if(counter < 0){
 
       handleStatus();
-      setCounter(initialTime)
+      setCounter(initialTime);
+      setTimerMinutes(0);
+      setTimerSeconds(0);
 
     }
-
-  
-  
 
     return () => {
 
       clearInterval(interval);
       
+      
     };
 
   }, [counter]);
+
+
+  useEffect(() => {
+
+    const intervalTimer= setInterval(() => {
+      
+      if(timerSeconds === 59){
+
+        setTimerMinutes((prevMinutes)=> prevMinutes + 1);
+        setTimerSeconds(0);
+
+      }else{
+
+        setTimerSeconds((prevSeconds)=> prevSeconds + 1);
+
+      }
+
+
+    }, 1000);
+
+    
+    return()=>{
+
+      clearInterval(intervalTimer);
+
+    }
+
+
+  }, [timerSeconds]);
 
 
   
